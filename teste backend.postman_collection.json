@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "fd8cb185-c724-4615-812a-a8f92615351b",
+		"name": "teste backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "getClient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/client",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\":1112,\n    \"nome\":\"zeka11\",\n    \"cpf\":\"12345675510\",\n    \"sexo\":\"M\",\n    \"email\":\"bar123t@bart.net.br\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/client",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"client"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\":1,\n    \"nome\":\"Bartolomeu 22\",\n    \"cpf\":\"12345678910\",\n    \"sexo\":\"M\",\n    \"email\":\"bart@bart.net.br\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/client/5f852d8a10b9a755f2a9350d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"client",
+								"5f852d8a10b9a755f2a9350d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Client",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\":1,\n    \"nome\":\"Bartolomeu 22\",\n    \"cpf\":\"12345678910\",\n    \"sexo\":\"M\",\n    \"email\":\"bart@bart.net.br\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/client/5f852e953ec15f5808282ab3",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"client",
+								"5f852e953ec15f5808282ab3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Produto",
+			"item": [
+				{
+					"name": "Lista Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/product",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\":22,\n    \"nome\":\"Carrinho\",\n    \"cor\":\"Cinza\",\n    \"tamanho\":\"PP\",\n    \"valor\":2.50\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/product",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\":1,\n    \"nome\":\"Bartolomeu 22\",\n    \"cpf\":\"12345678910\",\n    \"sexo\":\"M\",\n    \"email\":\"bart@bart.net.br\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/product/5f852d8a10b9a755f2a9350d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product",
+								"5f852d8a10b9a755f2a9350d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\":1,\n    \"nome\":\"Bartolomeu 22\",\n    \"cpf\":\"12345678910\",\n    \"sexo\":\"M\",\n    \"email\":\"bart@bart.net.br\"\n}"
+						},
+						"url": {
+							"raw": "localhost:5000/api/product/5f8534da969f1b5fbd44b572",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"product",
+								"5f8534da969f1b5fbd44b572"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "245a8546-c8d0-4fad-8521-13aecaf566b8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "54551d83-ea90-4d4a-ad23-942cf3c4a422",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "lista pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:5000/api/order",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cria pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": 55,\n    \"client\": {\n        \"_id\": \"5f8541c84836236b092ddd83\",\n       \"nome\": \"zeka11\"\n    },\n    \"itens\": [\n    {\n      \"_id\": \"5f85346c969f1b5fbd44b571\",\n        \"codigo\": 2,\n        \"nome\": \"Carro\",\n        \"cor\": \"Prata\",\n        \"tamanho\": \"muito grande\",\n        \"valor\": 27000,\n        \"qtd\":1\n    },\n  ],\n\n  date: { type: Date, required: true, default: Date.now },\n  typePayment: {\n    type: String,\n    required: true,\n    enum: TypePaymentEnum,\n  }}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/order",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

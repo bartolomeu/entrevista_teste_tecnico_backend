@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 
 const clientRoute = require("./route/Client.route");
 const productRoute = require("./route/Product.route");
+const orderRoute = require("./route/Order.route");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -25,5 +26,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/api/client", clientRoute);
 app.use("/api/product", productRoute);
+app.use("/api/order", orderRoute);
 
 app.listen(port, () => console.log(`Listening on port ${port}`));

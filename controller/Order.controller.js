@@ -1,5 +1,8 @@
+const ClientModel = require("../model/Client.model");
 const OrderModel = require("../model/Order.model");
 const TypePaymentEnum = require("../model/TypePaymentEnum");
+const { mailBodyText, mailBodyHtml } = require("../util/emailText");
+const nodemailer = require("../util/nodemailer");
 
 exports.list = (req, res) => {
   OrderModel.find({ active: true }, (err, data) => {
@@ -131,7 +134,23 @@ exports.delete = async (req, res) => {
 exports.detail = (req, res) => {
   OrderModel.findById(req.params.id, (err, data) => {
     if (err) return res.sendStatus(500);
-    delete data.password;
     res.send(data);
   });
+};
+
+exports.sendEmail = async (req, res) => {
+  try {
+    const order = await OrderModel.findById(req.params.id);
+    const client = await ClientModel.findById(order.client._id);
+
+    nodemailer(
+      client.email,
+      mailBodyHtml(client.nome, order.codigo, order.itens),
+      mailBodyText(client.nome, order.codigo, order.itens)
+    );
+
+    res.send({ msg: "Mail Sent" });
+  } catch (error) {
+    res.sendStatus(500);
+  }
 };

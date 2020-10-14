@@ -1,7 +1,12 @@
 # teste_backend
 
+## Para instalar modules
 
-executar o programa
+npm install
+ou
+yarn
+
+## Executar o programa
 
 npm run start
 
@@ -9,5 +14,4 @@ ou
 
 yarn start
 
-
-Nescessário MongoDB rodando na porta 27017
+### Nescessário MongoDB rodando na porta 27017

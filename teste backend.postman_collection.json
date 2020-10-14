@@ -304,6 +304,91 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "update pedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": 55,\n    \"client\": {\n        \"_id\": \"5f8541c84836236b092ddd83\",\n       \"nome\": \"zeka11\"\n    },\n    \"itens\": [\n    {\n      \"_id\": \"5f85346c969f1b5fbd44b571\",\n        \"codigo\": 2,\n        \"nome\": \"Carro\",\n        \"cor\": \"Prata\",\n        \"tamanho\": \"muito grande\",\n        \"valor\": 27000,\n        \"qtd\":1\n    },\n  ],\n\n  date: { type: Date, required: true, default: Date.now },\n  typePayment: {\n    type: String,\n    required: true,\n    enum: TypePaymentEnum,\n  }}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/order",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SendEmail pedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": 55,\n    \"client\": {\n        \"_id\": \"5f8541c84836236b092ddd83\",\n       \"nome\": \"zeka11\"\n    },\n    \"itens\": [\n    {\n      \"_id\": \"5f85346c969f1b5fbd44b571\",\n        \"codigo\": 2,\n        \"nome\": \"Carro\",\n        \"cor\": \"Prata\",\n        \"tamanho\": \"muito grande\",\n        \"valor\": 27000,\n        \"qtd\":1\n    },\n  ],\n\n  date: { type: Date, required: true, default: Date.now },\n  typePayment: {\n    type: String,\n    required: true,\n    enum: TypePaymentEnum,\n  }}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/order",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete pedido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"codigo\": 55,\n    \"client\": {\n        \"_id\": \"5f8541c84836236b092ddd83\",\n       \"nome\": \"zeka11\"\n    },\n    \"itens\": [\n    {\n      \"_id\": \"5f85346c969f1b5fbd44b571\",\n        \"codigo\": 2,\n        \"nome\": \"Carro\",\n        \"cor\": \"Prata\",\n        \"tamanho\": \"muito grande\",\n        \"valor\": 27000,\n        \"qtd\":1\n    },\n  ],\n\n  date: { type: Date, required: true, default: Date.now },\n  typePayment: {\n    type: String,\n    required: true,\n    enum: TypePaymentEnum,\n  }}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5000/api/order/5f866fed9286fb0e98d1c88d",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"order",
+								"5f866fed9286fb0e98d1c88d"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"protocolProfileBehavior": {}

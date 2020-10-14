@@ -1,6 +1,1 @@
-exports.TypePaymentEnum = [
-  "Dinheiro",
-  "CartaoCredito",
-  "CartaoDebito",
-  "Cheque",
-];
+module.exports = ["Dinheiro", "CartaoCredito", "CartaoDebito", "Cheque"];

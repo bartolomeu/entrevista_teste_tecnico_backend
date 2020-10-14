@@ -1,4 +1,5 @@
 const OrderModel = require("../model/Order.model");
+const TypePaymentEnum = require("../model/TypePaymentEnum");
 
 exports.list = (req, res) => {
   OrderModel.find({ active: true }, (err, data) => {
@@ -27,8 +28,8 @@ exports.checkParams = (req, res, next) => {
   }
 
   if (
-    !req.body.itens.length ||
-    !Array.isArray(req.body.itens.length) ||
+    !req.body.itens ||
+    !Array.isArray(req.body.itens) ||
     req.body.itens.length == 0
   ) {
     console.log("req.body.itens empty");
@@ -60,8 +61,9 @@ exports.checkParams = (req, res, next) => {
     console.log("req.body.typePayment empty");
     validate.push("Tipo de Pagamento está vazio");
   } else {
-    if (TypePaymentEnum.includes(req.body.cpf.typePayment))
+    if (!TypePaymentEnum.includes(req.body.typePayment)) {
       validate.push("Tipo de Pagamento inválido");
+    }
   }
   if (validate.length > 0) return res.status(400).send({ errors: validate });
 
@@ -72,8 +74,8 @@ exports.create = function (req, res) {
   const order = new OrderModel({
     codigo: req.body.codigo,
     client: {
-      _id: req.body,
-      nome: req.body.nome,
+      _id: req.body.client._id,
+      nome: req.body.client.nome,
     },
     itens: req.body.itens,
     typePayment: req.body.typePayment,
@@ -97,12 +99,15 @@ exports.create = function (req, res) {
 };
 
 exports.update = (req, res) => {
-  const newData = {
-    nome: req.body.nome,
-    cpf: req.body.cpf,
-    sexo: req.body.sexo,
-    email: req.body.email,
-  };
+  const newData = new OrderModel({
+    codigo: req.body.codigo,
+    client: {
+      _id: req.body,
+      nome: req.body.nome,
+    },
+    itens: req.body.itens,
+    typePayment: req.body.typePayment,
+  });
 
   OrderModel.findByIdAndUpdate(req.params.id, newData, (err) => {
     if (err) {

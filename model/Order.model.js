@@ -5,12 +5,12 @@ const Schema = mongoose.Schema;
 const OrderSchema = new Schema({
   codigo: { type: Number, required: true },
   client: {
-    _id: { type: Schema.Types.ObjectId, ref: "client" },
+    _id: String,
     nome: String,
   },
   itens: [
     {
-      _id: { type: Schema.Types.ObjectId, ref: "product" },
+      _id: String,
       nome: String,
       cor: { type: String },
       tamanho: { type: String },

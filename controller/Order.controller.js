@@ -18,7 +18,7 @@ exports.checkParams = (req, res, next) => {
     console.log("req.body.codigo empty");
     validate.push("Código está vazio");
   }
-  if (!req.body.client._id) {
+  if (req.method == "POST" && !req.body.client._id) {
     console.log("req.body.client._id empty");
     validate.push("ID do Cliente está vazio");
   }
@@ -99,17 +99,7 @@ exports.create = function (req, res) {
 };
 
 exports.update = (req, res) => {
-  const newData = new OrderModel({
-    codigo: req.body.codigo,
-    client: {
-      _id: req.body,
-      nome: req.body.nome,
-    },
-    itens: req.body.itens,
-    typePayment: req.body.typePayment,
-  });
-
-  OrderModel.findByIdAndUpdate(req.params.id, newData, (err) => {
+  OrderModel.findByIdAndUpdate(req.params.id, req.body, (err) => {
     if (err) {
       console.log(err);
       return res.status(500).send({
@@ -127,6 +117,7 @@ exports.update = (req, res) => {
 
 exports.delete = async (req, res) => {
   try {
+    console.log(req.params.id);
     const cli = await OrderModel.findOneAndUpdate(
       { _id: req.params.id },
       { active: false }
